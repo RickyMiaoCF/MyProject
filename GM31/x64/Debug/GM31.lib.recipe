@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\unlitTexturePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\unlitTextureVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\vertexLightingPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\vertexLightingVS.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

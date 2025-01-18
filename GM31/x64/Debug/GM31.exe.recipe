@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\作业\就職\240917\GM31.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\oceanPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\oceanVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\pointLightingBlinnPhongPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\pointLightingBlinnPhongVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\unlitTexturePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\unlitTextureVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\vertexLightingPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shader\vertexLightingVS.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
