@@ -1,6 +1,5 @@
 d:\作业\就職\240917\gm31\x64\debug\vc143.pdb
 d:\作业\就職\240917\gm31\x64\debug\vc143.idb
-d:\作业\就職\240917\gm31\x64\debug\imgui_tables.obj
 d:\作业\就職\240917\gm31\x64\debug\imgui_impl_win32.obj
 d:\作业\就職\240917\gm31\x64\debug\imgui_impl_dx11.obj
 d:\作业\就職\240917\gm31\x64\debug\imgui_draw.obj
@@ -12,6 +11,7 @@ d:\作业\就職\240917\gm31\x64\debug\fire.obj
 d:\作业\就職\240917\gm31\x64\debug\field.obj
 d:\作业\就職\240917\gm31\x64\debug\explosion.obj
 d:\作业\就職\240917\gm31\x64\debug\enemy.obj
+d:\作业\就職\240917\gm31\x64\debug\editorwinobj.obj
 d:\作业\就職\240917\gm31\x64\debug\editordefault.obj
 d:\作业\就職\240917\gm31\x64\debug\debug.obj
 d:\作业\就職\240917\gm31\x64\debug\cylinder.obj
@@ -20,7 +20,6 @@ d:\作业\就職\240917\gm31\x64\debug\bullet.obj
 d:\作业\就職\240917\gm31\x64\debug\box.obj
 d:\作业\就職\240917\gm31\x64\debug\audio.obj
 d:\作业\就職\240917\gm31\x64\debug\animationmodel.obj
-d:\作业\就職\240917\gm31\x64\debug\wave.obj
 d:\作业\就職\240917\gm31\x64\debug\visualbox.obj
 d:\作业\就職\240917\gm31\x64\debug\tree.obj
 d:\作业\就職\240917\gm31\x64\debug\title.obj
@@ -40,13 +39,17 @@ d:\作业\就職\240917\gm31\x64\debug\manager.obj
 d:\作业\就職\240917\gm31\x64\debug\main.obj
 d:\作业\就職\240917\gm31\x64\debug\input.obj
 d:\作业\就職\240917\gm31\x64\debug\imgui_widgets.obj
-d:\作业\就職\240917\gm31\x64\debug\editorwinobj.obj
-d:\作业\就職\240917\shader\pointlightingblinnphongps.cso
+d:\作业\就職\240917\gm31\x64\debug\imgui_tables.obj
+d:\作业\就職\240917\gm31\x64\debug\wave.obj
+d:\作业\就職\240917\gm31\x64\debug\editorwinlight.obj
 d:\作业\就職\240917\shader\pointlightingblinnphongvs.cso
 d:\作业\就職\240917\shader\unlittextureps.cso
 d:\作业\就職\240917\shader\unlittexturevs.cso
 d:\作业\就職\240917\shader\vertexlightingps.cso
 d:\作业\就職\240917\shader\vertexlightingvs.cso
+d:\作业\就職\240917\shader\pointlightingblinnphongps.cso
+d:\作业\就職\240917\shader\oceanvs.cso
+d:\作业\就職\240917\shader\oceanps.cso
 d:\作业\就職\240917\gm31.exe
 d:\作业\就職\240917\gm31.pdb
 d:\作业\就職\240917\gm31\x64\debug\gm31.ilk

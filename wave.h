@@ -1,5 +1,11 @@
 #pragma once
+
+#include <d3d11.h>
 #include "gameObject.h"
+#include "renderer.h"
+
+
+
 
 class Wave : public GameObject
 {
@@ -27,7 +33,7 @@ public:
 	void Update();
 	void Draw();
 
-	float GetAmplitude() { return m_Amplitude;}
+	float GetAmplitude() { return m_Amplitude; }
 	float GetWaveLength() { return m_WaveLength; }
 	float GetWaveCycle() { return m_WaveCycle; }
 

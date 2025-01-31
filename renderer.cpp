@@ -45,7 +45,7 @@ void Renderer::Init()
 	swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
 	swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	swapChainDesc.OutputWindow = GetWindow();
-	swapChainDesc.SampleDesc.Count = 1;
+	swapChainDesc.SampleDesc.Count = 8;
 	swapChainDesc.SampleDesc.Quality = 0;
 	swapChainDesc.Windowed = TRUE;
 
@@ -92,7 +92,7 @@ void Renderer::Init()
 	// デプスステンシルビュー作成
 	D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc{};
 	depthStencilViewDesc.Format = textureDesc.Format;
-	depthStencilViewDesc.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
+	depthStencilViewDesc.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2DMS;
 	depthStencilViewDesc.Flags = 0;
 	m_Device->CreateDepthStencilView(depthStencile, &depthStencilViewDesc, &m_DepthStencilView);
 	depthStencile->Release();
@@ -121,7 +121,7 @@ void Renderer::Init()
 	rasterizerDesc.FillMode = D3D11_FILL_SOLID; 
 	rasterizerDesc.CullMode = D3D11_CULL_BACK; 
 	rasterizerDesc.DepthClipEnable = TRUE; 
-	rasterizerDesc.MultisampleEnable = FALSE; 
+	rasterizerDesc.MultisampleEnable = TRUE; 
 
 	ID3D11RasterizerState *rs;
 	m_Device->CreateRasterizerState( &rasterizerDesc, &rs );

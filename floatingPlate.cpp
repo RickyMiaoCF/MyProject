@@ -1,6 +1,6 @@
 #include "gameObject.h"
 #include "componentsManager.h"
-//#include "wave.h"
+#include "wave.h"
 #include "floatingSample.h"
 #include "floatingPlate.h"
 //#include "game.h"
