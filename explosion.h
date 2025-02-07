@@ -10,9 +10,10 @@ private:
 	ID3D11VertexShader* m_VertexShader{};
 	ID3D11PixelShader* m_PixelShader{};
 	ID3D11InputLayout* m_VertexLayout{};
-	int m_Count{}; //アニメーション枚数計算用
+	int m_Count{}; //繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ譫壽焚險育ｮ礼畑
 
 public:
+
 	void Init();
 	void Uninit();
 	void Update();

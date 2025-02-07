@@ -3,20 +3,23 @@
 #include <DirectXMath.h>
 using namespace DirectX;
 
+class Scene;
+
 class GameObject
 {
 protected:
+
 	bool     m_Destroy = false;
 	bool     m_IsEnabled = false;
 	XMFLOAT3 m_Position = XMFLOAT3(0.0f, 0.0f, 0.0f);
 	XMFLOAT3 m_Rotation = XMFLOAT3(0.0f, 0.0f, 0.0f);
 	XMFLOAT3 m_Scale    = XMFLOAT3(1.0f, 1.0f, 1.0f);
 	float m_ScaleCoefficient = 1.0f;
-
-
+	Scene* m_CurrentScene = nullptr;
 
 public:
-	virtual ~GameObject() {};
+	GameObject(Scene* scene) : m_CurrentScene(scene) {}
+	virtual ~GameObject() {}
 
 	virtual void Init() = 0; //純粋仮想関数
 	virtual void Uninit() = 0;
@@ -46,7 +49,8 @@ public:
 	float GetScaleCoefficient() { return m_ScaleCoefficient; }
 	bool GetEnabled() const { return m_IsEnabled; }
 
-
+	void SetScene(Scene* scene) { m_CurrentScene = scene; };
+	Scene* GetScene() { return m_CurrentScene; };
 
 
 	bool Destroy()

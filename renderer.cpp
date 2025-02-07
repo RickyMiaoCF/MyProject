@@ -13,6 +13,8 @@ ID3D11DeviceContext*    Renderer::m_DeviceContext{};
 IDXGISwapChain*         Renderer::m_SwapChain{};
 ID3D11RenderTargetView* Renderer::m_RenderTargetView{};
 ID3D11DepthStencilView* Renderer::m_DepthStencilView{};
+ID3D11RasterizerState* Renderer::m_RasterizerStateSolid{};
+ID3D11RasterizerState* Renderer::m_RasterizerStateWireframe{};
 
 ID3D11Buffer*			Renderer::m_WorldBuffer{};
 ID3D11Buffer*			Renderer::m_ViewBuffer{};
@@ -116,19 +118,37 @@ void Renderer::Init()
 
 
 
-	// ラスタライザステート設定
-	D3D11_RASTERIZER_DESC rasterizerDesc{};
-	rasterizerDesc.FillMode = D3D11_FILL_SOLID; 
-	rasterizerDesc.CullMode = D3D11_CULL_BACK; 
-	rasterizerDesc.DepthClipEnable = TRUE; 
-	rasterizerDesc.MultisampleEnable = TRUE; 
+	//// ラスタライザステート設定
+	//D3D11_RASTERIZER_DESC rasterizerDesc{};
+	//rasterizerDesc.FillMode = D3D11_FILL_SOLID; 
+	//rasterizerDesc.CullMode = D3D11_CULL_BACK; 
+	//rasterizerDesc.DepthClipEnable = TRUE; 
+	//rasterizerDesc.MultisampleEnable = TRUE; 
 
-	ID3D11RasterizerState *rs;
-	m_Device->CreateRasterizerState( &rasterizerDesc, &rs );
+	//ID3D11RasterizerState *rs;
+	//m_Device->CreateRasterizerState( &rasterizerDesc, &rs );
 
-	m_DeviceContext->RSSetState( rs );
+	//m_DeviceContext->RSSetState( rs );
 
+	
+		D3D11_RASTERIZER_DESC rasterDescSolid{};
+		rasterDescSolid.FillMode = D3D11_FILL_SOLID;     // 实体填充
+		rasterDescSolid.CullMode = D3D11_CULL_BACK;      // 背面剔除
+		rasterDescSolid.DepthClipEnable = TRUE;
+		rasterDescSolid.MultisampleEnable = TRUE;
 
+		m_Device->CreateRasterizerState(&rasterDescSolid, &m_RasterizerStateSolid);
+
+	
+		D3D11_RASTERIZER_DESC rasterDescWire{};
+		rasterDescWire.FillMode = D3D11_FILL_WIREFRAME;  // 线框
+		rasterDescWire.CullMode = D3D11_CULL_NONE;       // 线框模式下一般禁用剔除，保证线框全面显示
+		rasterDescWire.DepthClipEnable = TRUE;
+		rasterDescWire.MultisampleEnable = TRUE;
+
+		m_Device->CreateRasterizerState(&rasterDescWire, &m_RasterizerStateWireframe);
+
+		m_DeviceContext->RSSetState(m_RasterizerStateSolid);
 
 
 	// ブレンドステート設定
@@ -411,6 +431,7 @@ void Renderer::CreatePixelShader( ID3D11PixelShader** PixelShader, const char* F
 }
 
 //ライト更新関数
+
 void Renderer::UpdateGlobalLight() {
 
 	Sun& sun = Sun::GetInstance();
@@ -425,5 +446,18 @@ void Renderer::UpdateGlobalLight() {
 	//ライトセット
 	SetLight(light);
 }
+
+
+//フレームモードON/OFF
+void Renderer::ChangeRSWireframe(bool s)
+{
+	if (s)
+	m_DeviceContext->RSSetState(m_RasterizerStateWireframe);
+	
+	else
+	m_DeviceContext->RSSetState(m_RasterizerStateSolid);
+}
+
+
 
 

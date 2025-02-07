@@ -1,28 +1,28 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output ディレクトリの末尾がスラッシュではありません。Output ディレクトリが適切に評価されるようにするために、このビルド インスタンスによってスラッシュが追加されます。
-  renderer.cpp
-D:\作业\就職\240917\renderer.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-D:\作业\就職\240917\Sun.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
+  player.cpp
+D:\作业\就職\240917\manager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'player.cpp' をコンパイルしています)
   
-D:\作业\就職\240917\Sun.h(47,19): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
+D:\作业\就職\240917\scene.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'player.cpp' をコンパイルしています)
   
-D:\作业\就職\240917\Sun.h(48,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
+D:\作业\就職\240917\gameObject.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'player.cpp' をコンパイルしています)
   
-D:\作业\就職\240917\Sun.h(53,7): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
+D:\作业\就職\240917\componentsManager.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'player.cpp' をコンパイルしています)
   
-D:\作业\就職\240917\Sun.h(52,7): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
+D:\作业\就職\240917\modelRenderer.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'player.cpp' をコンパイルしています)
   
-D:\作业\就職\240917\Sun.h(51,7): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
-  
-D:\作业\就職\240917\Sun.h(58,19): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
-  
-D:\作业\就職\240917\Sun.h(92,42): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'renderer.cpp' をコンパイルしています)
-  
+DirectXTex_Debug.lib(DirectXTexImage.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexImage.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexWIC.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexWIC.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexD3D11.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexD3D11.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexUtil.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexUtil.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexConvert.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexConvert.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexCompress.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexCompress.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(DirectXTexMipMaps.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(DirectXTexMipMaps.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(BC.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(BC.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(BC4BC5.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(BC4BC5.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+DirectXTex_Debug.lib(BC6HBC7.obj) : warning LNK4099: PDB '' が 'DirectXTex_Debug.lib(BC6HBC7.obj)' で、または '' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
   GM31.vcxproj -> D:\作业\就職\240917\GM31.exe

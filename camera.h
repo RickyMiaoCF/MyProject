@@ -8,10 +8,14 @@ private:
 	XMFLOAT4X4 m_ViewMatrix{};
 
 public:
+	Camera(Scene* scene) :GameObject(scene) {}
+
 	void Init();
 	void Uninit();
 	void Update();
 	void Draw();
+
+	void RotateTarget(const XMFLOAT2& angle);
 	XMMATRIX GetViewMatrix() { return XMLoadFloat4x4 (&m_ViewMatrix); }
 };
 

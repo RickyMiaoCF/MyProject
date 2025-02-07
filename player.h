@@ -3,13 +3,13 @@
 #include "componentsManager.h"
 #include <string>
 
-
 class Player : public GameObject
 {
 private:
 
 	Component* m_Component{};
 	ComponentsManager* m_ComponentsManager{};
+	Scene* m_currentScene{};
 
 	ID3D11VertexShader* m_VertexShader{};
 	ID3D11PixelShader* m_PixelShader{};
@@ -24,8 +24,6 @@ private:
 	std::string m_AnimationName2{};
 	float m_AnimationBlendRatio = 0;
 	
-	
-	
 	int m_AnimationFrame = 0;
 
 	XMFLOAT3 m_Velocity{};
@@ -34,10 +32,14 @@ private:
 	class Audio* m_SE{};
 
 public:
+
+	Player(Scene* scene) :GameObject(scene) {}
+
 	void Init() override;
 	void Uninit() override;
 	void Update() override;
 	void Draw() override;
 
 	ComponentsManager* GetComponentsManager() { return	m_ComponentsManager; }
+
 };

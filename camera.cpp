@@ -4,7 +4,8 @@
 #include "camera.h"
 #include "player.h"
 #include "scene.h"
-#include"input.h"
+#include "input.h"
+#include "mouse.h"
 
 
 void Camera::Init()
@@ -30,18 +31,19 @@ void Camera::Update()
 {
 
     static bool m_CircularMode = false; // 记录当前是否处于圆周运动模式
-    // 按键处理
+    
+
     if (Input::GetKeyPress('I')) {
-        m_Target.y += 0.5f; // 向上平移
+        m_Rotation.z += 0.5f; // 向上平移
     }
     if (Input::GetKeyPress('K')) {
-        m_Target.y -= 0.5f; // 向下平移
+        m_Rotation.z -= 0.5f; // 向下平移
     }
     if (Input::GetKeyPress('J')) {
-        m_Target.x -= 0.5f; // 向左平移
+        m_Rotation.x -= 0.5f; // 向左平移
     }
     if (Input::GetKeyPress('L')) {
-        m_Target.x += 0.5f; // 向右平移
+        m_Rotation.x += 0.5f; // 向右平移
     }
     if (Input::GetKeyPress('N')) {
         m_CircularMode = false; // 退出圆周运动模式
@@ -74,38 +76,6 @@ void Camera::Update()
     }
 }
 
-	//Scene* scene;
-	//scene = Manager::GetScene();
-
-	//Player* player;
-	//player = scene->GetGameObject<Player>();
-
-	//m_Target = player->GetPosition();
-	//m_Target.y = 13.0f;
-
-	//m_Position = XMFLOAT3(m_Target.x - 0.0f, 10.0f, m_Target.z -20.0f);
-	//XMFLOAT3 forward = GetForward();
-
-	//if (true)
-	//{
-
-	//}
-
-	//if (Input::GetKeyPress('U'))
-	//{
-	//	m_Rotation.x -= 0.05f;
-
-	//}
-	//if (Input::GetKeyPress('O'))
-	//{
-	//	m_Rotation.x += 0.05f;
-
-	//}
-	////m_Position.x = m_Target.x - sinf(m_Rotation.x) * 3.0f;
-	////m_Position.y = m_Target.y - cosf(m_Rotation.y) * 3.0f;
-
-
-//}
 void Camera::Draw()
 {
 	//ビューマトリクス設定
@@ -121,4 +91,31 @@ void Camera::Draw()
 	projectionMatrix = XMMatrixPerspectiveFovLH(1.0f, (float)SCREEN_WIDTH / SCREEN_HEIGHT, 1.0f, 1000.0f);
 	
 	Renderer::SetProjectionMatrix(projectionMatrix);
+}
+
+void Camera::RotateTarget(const XMFLOAT2& angle)
+{
+    // 将角度转换为弧度
+    float yaw = XMConvertToRadians(angle.x);  // 水平旋转
+    float pitch = XMConvertToRadians(angle.y);  // 垂直旋转
+
+    // 1. 计算从相机位置指向目标的向量 (targetDir)
+    XMVECTOR cameraPos = XMLoadFloat3(&m_Position);
+    XMVECTOR cameraTarget = XMLoadFloat3(&m_Target);
+    XMVECTOR targetDir = XMVectorSubtract(cameraTarget, cameraPos);
+
+    // 2. 计算绕 Y 轴 (Yaw) 和 X 轴 (Pitch) 的旋转矩阵
+    //    注意：旋转矩阵的乘法顺序会影响结果，通常先 Yaw 再 Pitch（或反之）实现不同的操控手感
+    XMMATRIX rotY = XMMatrixRotationY(yaw);
+    XMMATRIX rotX = XMMatrixRotationX(pitch);
+
+    // 这里选择“先 Yaw 后 Pitch” 的顺序
+    XMMATRIX matRot = XMMatrixMultiply(rotY, rotX);
+
+    // 3. 使用旋转矩阵变换目标向量
+    targetDir = XMVector3TransformNormal(targetDir, matRot);
+
+    // 4. 计算新的目标位置：相机位置 + 旋转后的方向向量
+    cameraTarget = XMVectorAdd(cameraPos, targetDir);
+    XMStoreFloat3(&m_Target, cameraTarget);
 }

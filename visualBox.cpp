@@ -116,8 +116,7 @@ void VisualBox::Update() {
 		Renderer::GetDeviceContext()->Unmap(m_VertexBuffer, 0);   
 	}
 
-	DEBUG_VAR(m_IsEnabled);
-	DEBUG_VAR(m_Height);
+	DEBUG_VAR(m_Position);
 
 }
 

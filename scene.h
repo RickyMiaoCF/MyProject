@@ -2,20 +2,11 @@
 #include <list>
 #include <vector>
 #include "gameObject.h"
-//#include "field.h"
 #include "camera.h"
 #include "player.h"
-#include "enemy.h"
 //#include "polygon2D.h"
-#include "tree.h"
-#include "cylinder.h"
-#include "bullet.h"
 #include "sky.h"
-#include "box.h"
-
 #include "manager.h"
-
-#include "explosion.h"
 
 #define CAMERA 0
 #define WORLD 1
@@ -37,7 +28,7 @@ public:
 	template <typename T> //テンプレート関数
 	T* AddGameObject(int Layer)
 	{
-		T* GameObject = new T();
+		T* GameObject = new T(this);
 		GameObject->Init();
 		m_GameObject[Layer].push_back(GameObject);
 		return GameObject;

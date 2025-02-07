@@ -1,6 +1,5 @@
 ﻿#include "main.h"
 #include "renderer.h"
-#include "score.h"
 #include "audio.h"
 #include "input.h"
 

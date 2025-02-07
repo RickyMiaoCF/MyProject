@@ -23,6 +23,7 @@ using namespace DirectX;
 #pragma comment(lib,"DirectXTex_Release.lib")
 #endif
 
+#include "debug.h"
 
 
 #pragma comment (lib, "winmm.lib")

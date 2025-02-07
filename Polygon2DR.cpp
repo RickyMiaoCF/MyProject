@@ -63,16 +63,16 @@ void Polygon2DR::Init()
 		"shader\\unlitTexturePS.cso");
 
 	//BGM再生
-	m_BGM = new Audio(this);
-	m_BGM->Load("asset\\audio\\bgm.wav");
-	m_BGM->Play(true);
+	//m_BGM = new Audio(this);
+	//m_BGM->Load("asset\\audio\\bgm.wav");
+	//m_BGM->Play(true);
 }
 
 void Polygon2DR::Uninit()
 {
 	//BGM終了・解放
-	m_BGM->Uninit();
-	delete m_BGM;
+	/*m_BGM->Uninit();*/
+	/*delete m_BGM;*/
 	m_VertexBuffer->Release();
 	m_Texture->Release();
 
@@ -105,16 +105,16 @@ void Polygon2DR::Update()
 		}
 		// 最終更新時間を現在の時間に更新
 		m_LastUpdateTime = currentTime;
-		if (Input::GetKeyTrigger(VK_ADD))
-		{
-			m_BGM->VolumeUp();
-		}
+		//if (Input::GetKeyTrigger(VK_ADD))
+		//{
+		//	m_BGM->VolumeUp();
+		//}
 
-		if (Input::GetKeyTrigger(VK_SUBTRACT))
-		{
+		//if (Input::GetKeyTrigger(VK_SUBTRACT))
+		//{
 
-			m_BGM->VolumeDown();
-		}
+		//	m_BGM->VolumeDown();
+		//}
 
 		if (Input::GetKeyTrigger(VK_MULTIPLY))
 		{

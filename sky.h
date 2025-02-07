@@ -17,6 +17,9 @@ private:
 	ID3D11InputLayout* m_VertexLayout{};
 
 public:
+
+	Sky(Scene* scene) :GameObject(scene) {}
+
 	void Init() override;
 	void Uninit() override;
 	void Update() override;

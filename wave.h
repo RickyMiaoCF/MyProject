@@ -19,15 +19,18 @@ private:
 	ID3D11PixelShader* m_PixelShader{};
 	ID3D11InputLayout* m_VertexLayout{};
 
-	VERTEX_3D m_Vertex[21][21];
+	VERTEX_3D m_Vertex[21][21] = {};
 
 	float m_Amplitude = 1.0f;
 	float m_WaveLength = 0.45f;
 	float m_WaveCycle = 4.5f;
 
-	float m_Time;
+	float m_Time = 0.0f;
 
 public:
+
+	Wave(Scene* scene) :GameObject(scene) {}
+
 	void Init();
 	void Uninit();
 	void Update();

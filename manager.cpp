@@ -9,6 +9,7 @@
 #include "game.h"
 #include "result.h"
 #include "title.h"
+#include "mouse.h"
 
 
 Scene* Manager::m_Scene{};
@@ -44,6 +45,7 @@ void Manager::Update()
 
 	m_Scene->Update();
 
+	
 
 }
 

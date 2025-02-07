@@ -21,6 +21,9 @@ private:
 
 	class Audio*					m_BGM{};
 public:
+
+	Polygon2D(Scene* scene) :GameObject(scene) {}
+
 	void Init() override;
 	void Uninit() override;
 	void Update() override;

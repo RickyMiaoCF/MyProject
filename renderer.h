@@ -46,6 +46,8 @@ private:
 	static IDXGISwapChain*         m_SwapChain;
 	static ID3D11RenderTargetView* m_RenderTargetView;
 	static ID3D11DepthStencilView* m_DepthStencilView;
+	static ID3D11RasterizerState*  m_RasterizerStateSolid;
+	static ID3D11RasterizerState*  m_RasterizerStateWireframe;
 
 	static ID3D11Buffer*			m_WorldBuffer;
 	static ID3D11Buffer*			m_ViewBuffer;
@@ -59,6 +61,8 @@ private:
 
 	static ID3D11BlendState*		m_BlendState;
 	static ID3D11BlendState*		m_BlendStateATC;
+
+
 
 
 
@@ -84,6 +88,7 @@ public:
 	static ID3D11DepthStencilView* GetStencilView(void) { return m_DepthStencilView; }
 
 	static void UpdateGlobalLight();
+	static void ChangeRSWireframe(bool s);
 
 
 

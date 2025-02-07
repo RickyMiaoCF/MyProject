@@ -1,5 +1,4 @@
 ﻿#include "main.h"
-#include "renderer.h"
 #include "wave.h"
 //#include "gameObject.h"
 
@@ -136,36 +135,6 @@ void Wave::Uninit()
 
 void Wave::Update()
 {
-	//float m_Amplitude = 2.0f;
-	//float m_WaveLength = 5.0f;
-	//float m_WaveCycle = 2.0f;
-
-	//for (int x = 0; x < 21; x++) {
-	//	for (int z = 0; z < 21; z++) {
-
-	//		float dx = m_Vertex[z][x].Position.x - m_Vertex[0][0].Position.x;
-	//		float dz = m_Vertex[z][x].Position.z - m_Vertex[0][0].Position.z;
-
-	//		float length = sqrtf(dx * dx + dz * dz);
-
-	//		m_Vertex[x][z].Position.y = m_Amplitude * 
-	//			sinf(2.0f * XM_PI * (length / m_WaveLength - m_Time / m_WaveCycle));
-	//	}
-	//}
-
-	//m_Time += 1.0f / 60.0f;
-
-	////頂点データ書き換え
-	//D3D11_MAPPED_SUBRESOURCE msr;
-	//Renderer::GetDeviceContext()->Map(m_VertexBuffer, 0,
-	//	D3D11_MAP_WRITE_DISCARD, 0, &msr);
-
-	//VERTEX_3D* vertex = (VERTEX_3D*)msr.pData;
-
-	//memcpy(vertex, m_Vertex, sizeof(VERTEX_3D) * 21 * 21);
-
-	//Renderer::GetDeviceContext()->Unmap(m_VertexBuffer, 0);
-
 	for (int x = 0; x < 21; x++) {
 		for (int z = 0; z < 21; z++) {
 			float dx = m_Vertex[z][x].Position.x - m_Vertex[0][0].Position.x;
@@ -242,7 +211,7 @@ void Wave::Draw()
 	ZeroMemory(&material, sizeof(material));
 	material.Diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	material.Shininess = 50.0f;
-	material.Specular = XMFLOAT4(0.8f, 0.9f, 1.0f,1.0f);
+	material.Specular = XMFLOAT4(0.8f, 0.9f, 1.0f, 1.0f);
 	material.TextureEnable = true;
 	Renderer::SetMaterial(material);
 
@@ -315,8 +284,6 @@ float Wave::getHeight(XMFLOAT3 position)
 		n.y = v12.z * v13.x - v12.x * v13.z;
 		n.z = v12.x * v13.y - v12.y * v13.x;
 	}
-
-
 
 	py = -((position.x - pos1.x) * n.x + (position.z - pos1.z) * n.z) / n.y + pos1.y;
 
