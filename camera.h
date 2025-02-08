@@ -16,6 +16,7 @@ public:
 	void Draw();
 
 	void RotateTarget(const XMFLOAT2& angle);
+	XMVECTOR CamDir();
 	XMMATRIX GetViewMatrix() { return XMLoadFloat4x4 (&m_ViewMatrix); }
 };
 

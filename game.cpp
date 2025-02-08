@@ -11,6 +11,7 @@
 #include "Sun.h"
 #include"Polygon2DR.h"
 #include "mouse.h"
+#include"skyR.h"
 
 
 EditorsManager* g_EditorsManager = nullptr;
@@ -20,7 +21,9 @@ void Game::Init()
 {
 	AddGameObject<Camera>(CAMERA);
 
-	AddGameObject<Sky>(WORLD)->SetScale(XMFLOAT3(100.0f, 100.0f, 100.0f));
+	/*AddGameObject<Sky>(WORLD)->SetScale(XMFLOAT3(100.0f, 100.0f, 100.0f));*/
+
+	AddGameObject<SkyR>(WORLD)->SetScale(XMFLOAT3(100.0f, 100.0f, 100.0f));
 	
 	AddGameObject<Wave>(WORLD)->SetPosition(XMFLOAT3(0.0f, 0.0f, 0.0f));
 
@@ -41,13 +44,13 @@ void Game::Init()
 
 	g_EditorsManager->AddEditorWindow<EditorWinDefualt>();
 
-	g_EditorsManager->AddEditorWindow<EditorWinObj>();
+	/*g_EditorsManager->AddEditorWindow<EditorWinObj>();*/
 
 	g_EditorsManager->AddEditorWindow<EditorWinLight>();
 
 	g_EditorsManager->SetConnection(EW_COMPONENT, GetGameObject<Player>()->GetComponentsManager()->GetComponent<VisualBox>());
 
-	g_EditorsManager->SetConnection(EW_OBJECT, GetGameObject<Sky>());
+	/*g_EditorsManager->SetConnection(EW_OBJECT, GetGameObject<Sky>());*/
 
 }
 

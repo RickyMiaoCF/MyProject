@@ -42,11 +42,10 @@ struct LIGHT
 	float4 Diffuse;
 	float4 Ambient;
     float4 Specular; //ハイライト
-    
     float4 SkyColor; //天球色
     float4 GroundColor; //地面色
+    
     float4 GroundNormal; //地面の法線
-
     float4 Position; //光の位置
     float4 PointLightParam; //x 光の届く距離  y ライトの個数 z 金属感  w 滑らかさ
 };

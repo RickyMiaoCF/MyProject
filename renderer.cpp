@@ -133,7 +133,7 @@ void Renderer::Init()
 	
 		D3D11_RASTERIZER_DESC rasterDescSolid{};
 		rasterDescSolid.FillMode = D3D11_FILL_SOLID;     // 实体填充
-		rasterDescSolid.CullMode = D3D11_CULL_BACK;      // 背面剔除
+		rasterDescSolid.CullMode = D3D11_CULL_NONE;      // 背面剔除
 		rasterDescSolid.DepthClipEnable = TRUE;
 		rasterDescSolid.MultisampleEnable = TRUE;
 
@@ -442,6 +442,8 @@ void Renderer::UpdateGlobalLight() {
 	light.Diffuse = sun.GetDiffuse();
 	light.Ambient = sun.GetAmbient();
 	light.Specular = sun.GetSpecular();
+	light.SkyColor = sun.GetSkyColor();
+	light.GroundColor = sun.GetSkyColor();
 
 	//ライトセット
 	SetLight(light);

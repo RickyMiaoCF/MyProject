@@ -10,6 +10,7 @@
 #include "result.h"
 #include "title.h"
 #include "mouse.h"
+#include "sceneCheck.h"
 
 
 Scene* Manager::m_Scene{};
@@ -21,6 +22,8 @@ void Manager::Init()
 	Input::Init();
 	Audio::InitMaster();
 	m_Scene = new Game();
+
+	SceneCheck::GetInstance().SetCurScene(m_Scene);
 	/*m_Scene = Game::GetGameScene();*/
 	m_Scene->Init();
 	//SetScene<Title>();
@@ -42,6 +45,8 @@ void Manager::Uninit()
 void Manager::Update()
 {
 	Input::Update();
+
+	SceneCheck::GetInstance().SetCurScene(m_Scene);
 
 	m_Scene->Update();
 

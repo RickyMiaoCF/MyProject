@@ -31,49 +31,41 @@ void Camera::Update()
 {
 
     static bool m_CircularMode = false; // 记录当前是否处于圆周运动模式
-    
 
+    float moveSpeed = 0.3f;
+    
+    // 1) 先获取当前相机的“前方向”
+    XMVECTOR forward = CamDir();
+    forward = XMVector3Normalize(forward); // 归一化
+
+    // 2) 计算“右方向”：up = (0,1,0) 或根据需要
+    XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+    XMVECTOR right = XMVector3Cross(up, forward);
+    right = XMVector3Normalize(right);
+
+    // 3) 读取相机当前位置（以便加上移动量）
+    XMVECTOR camPos = XMLoadFloat3(&m_Position);
+
+    // ————— 根据按键来移动相机 —————
     if (Input::GetKeyPress('I')) {
-        m_Rotation.z += 0.5f; // 向上平移
+        // 沿前方向移动
+        camPos = XMVectorAdd(camPos, XMVectorScale(forward, moveSpeed));
     }
     if (Input::GetKeyPress('K')) {
-        m_Rotation.z -= 0.5f; // 向下平移
+        // 后退：前方向取负
+        camPos = XMVectorSubtract(camPos, XMVectorScale(forward, moveSpeed));
     }
     if (Input::GetKeyPress('J')) {
-        m_Rotation.x -= 0.5f; // 向左平移
+        // 左移：右方向取负
+        camPos = XMVectorSubtract(camPos, XMVectorScale(right, moveSpeed));
     }
     if (Input::GetKeyPress('L')) {
-        m_Rotation.x += 0.5f; // 向右平移
+        // 右移：沿 right 向量正方向
+        camPos = XMVectorAdd(camPos, XMVectorScale(right, moveSpeed));
     }
-    if (Input::GetKeyPress('N')) {
-        m_CircularMode = false; // 退出圆周运动模式
-        XMFLOAT3 forward = GetForward();
-        m_Position.x += forward.x * 0.5f; // 靠近目标
-        m_Position.y += forward.y * 0.5f;
-        m_Position.z += forward.z * 0.5f;
-    }
-    if (Input::GetKeyPress('M')) {
-        m_CircularMode = false; // 退出圆周运动模式
-        XMFLOAT3 forward = GetForward();
-        m_Position.x -= forward.x * 0.5f; // 远离目标
-        m_Position.y -= forward.y * 0.5f;
-        m_Position.z -= forward.z * 0.5f;
-    }
-    if (Input::GetKeyPress('U')) {
-        m_CircularMode = true; // 开启圆周运动模式
-        m_Rotation.y -= 0.05f; // 左旋
-    }
-    if (Input::GetKeyPress('O')) {
-        m_CircularMode = true; // 开启圆周运动模式
-        m_Rotation.y += 0.05f; // 右旋
-    }
+        
+    XMStoreFloat3(&m_Position, camPos);
 
-    // 如果处于圆周运动模式，更新摄像机的位置
-    if (m_CircularMode) {
-        m_Position.x = m_Target.x - sinf(m_Rotation.y) * 20.0f;
-        m_Position.z = m_Target.z - cosf(m_Rotation.y) * 20.0f;
-        m_Position.y = 10.0f; // 固定高度
-    }
 }
 
 void Camera::Draw()
@@ -118,4 +110,14 @@ void Camera::RotateTarget(const XMFLOAT2& angle)
     // 4. 计算新的目标位置：相机位置 + 旋转后的方向向量
     cameraTarget = XMVectorAdd(cameraPos, targetDir);
     XMStoreFloat3(&m_Target, cameraTarget);
+
+}
+
+XMVECTOR Camera::CamDir()
+{
+    // 1. 计算从相机位置指向目标的向量 (targetDir)
+    XMVECTOR cameraPos = XMLoadFloat3(&m_Position);
+    XMVECTOR cameraTarget = XMLoadFloat3(&m_Target);
+    XMVECTOR targetDir = XMVectorSubtract(cameraTarget, cameraPos);
+    return targetDir;
 }

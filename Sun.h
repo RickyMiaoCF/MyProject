@@ -11,6 +11,9 @@ private:
 	XMFLOAT4 m_Ambient;    // 环境光颜色
 	XMFLOAT4 m_Specular;
 
+	XMFLOAT4 m_SkyColor;
+	XMFLOAT4 m_GroundColor;
+
 	XMFLOAT4 m_DefualtDiffuse;    // 太阳漫反射颜色
 	XMFLOAT4 m_DefualtAmbient;    // 环境光颜色
 
@@ -25,6 +28,9 @@ private:
 		m_DefualtDiffuse = XMFLOAT4(0.9f, 0.57f, 0.27f, 0.39f);    // 默认白色偏暖
 		//m_DefualtAmbient = XMFLOAT4(0.3f, 0.3f, 0.4f, 1.0f);    // 默认柔和环境光
 		m_DefualtAmbient = XMFLOAT4(0.5f, 0.42f, 0.337f, 1.0f);    // 默认柔和环境光
+
+		m_SkyColor = XMFLOAT4(0.6f, 0.7f, 1.0f, 1.0f);
+		m_GroundColor = XMFLOAT4(0.4f, 0.3f, 0.2f, 1.0f);
 
 		m_Direction = XMFLOAT4(0.0f, -1.0f, 0.0f, 0.0f);
 		m_Diffuse = m_DefualtDiffuse;    // 太阳漫反射颜色
@@ -81,6 +87,8 @@ public:
 	const XMFLOAT4& GetDiffuse() const { return m_Diffuse; }
 	const XMFLOAT4& GetAmbient() const { return m_Ambient; }
 	const XMFLOAT4& GetSpecular() const { return m_Specular; }
+	const XMFLOAT4& GetSkyColor() const { return m_SkyColor; }
+	const XMFLOAT4& GetGroundColor() const { return m_GroundColor; }
 
 	float GetTime() const { return m_Time; }
 	bool IsEnabled() const { return m_Enable; }
@@ -88,6 +96,8 @@ public:
 	void SetDefualtDiffuse(XMFLOAT4 diffuse) { m_DefualtDiffuse = diffuse; }
 	void SetDefualtAmbient(XMFLOAT4 ambient) { m_DefualtAmbient = ambient; }
 	void SetSpecular(XMFLOAT4 specular) { m_Specular = specular; }
+	void SetSkyColor(XMFLOAT4 skyColor) { m_SkyColor = skyColor; }
+	void SetGroundColor(XMFLOAT4 groundColor) { m_GroundColor = groundColor; }
 
 	void SetTime(float time) { m_Time = fmod(time, 24.0f); } // 限制在 [0.0, 24.0] 范围
 	void SetEnabled(bool enable) { m_Enable = enable; }

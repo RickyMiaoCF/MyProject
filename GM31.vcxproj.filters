@@ -49,6 +49,9 @@
     <Filter Include="ImGui">
       <UniqueIdentifier>{a6339d57-4c1e-47f9-9407-98673a6da176}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{960a5c4d-a7c1-4a09-ab3d-9f48c9bb1078}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -91,9 +94,6 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="camera.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="snow.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="wave.h">
@@ -179,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="sky.h">
       <Filter>ヘッダー ファイル\GameObjHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="skyR.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -272,16 +275,46 @@
     <ClCompile Include="title.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="skyR.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneCheck.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="shader\common.hlsl" />
-    <FxCompile Include="shader\unlitTexturePS.hlsl" />
-    <FxCompile Include="shader\unlitTextureVS.hlsl" />
-    <FxCompile Include="shader\vertexLightingPS.hlsl" />
-    <FxCompile Include="shader\vertexLightingVS.hlsl" />
-    <FxCompile Include="shader\pointLightingBlinnPhongVS.hlsl" />
-    <FxCompile Include="shader\oceanPS.hlsl" />
-    <FxCompile Include="shader\oceanVS.hlsl" />
-    <FxCompile Include="shader\pointLightingBlinnPhongPS.hlsl" />
+    <FxCompile Include="shader\skyPS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\skyVS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\common.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\oceanPS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\oceanVS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\pointLightingBlinnPhongPS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\pointLightingBlinnPhongVS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\unlitTexturePS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\unlitTextureVS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\vertexLightingPS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\vertexLightingVS.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

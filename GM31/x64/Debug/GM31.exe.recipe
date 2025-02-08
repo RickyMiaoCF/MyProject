@@ -19,6 +19,12 @@
       <FullPath>D:\作业\就職\240917\shader\pointLightingBlinnPhongVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
+      <FullPath>D:\作业\就職\240917\shaderskyPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\作业\就職\240917\shaderskyVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
       <FullPath>D:\作业\就職\240917\shader\unlitTexturePS.cso</FullPath>
     </ContentFile>
     <ContentFile>
